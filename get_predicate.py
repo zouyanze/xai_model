@@ -25,13 +25,13 @@ print(res['choices'][0]['message']['content'])
 
 import pandas as pd
 
-# 提取生成的谓词
+# extract predicate
 predicates = res['choices'][0]['message']['content'].split('\n')
 
-# 创建数据框
+# build DataFrame
 df = pd.DataFrame({'Predicate': predicates})
 
-# 保存为CSV文件
+# save
 df.to_csv('predicates.csv', index=False)
 
 print(f"Predicates saved to predicates.csv.")
